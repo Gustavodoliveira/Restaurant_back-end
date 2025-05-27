@@ -21,10 +21,10 @@ public class CustomerRepositoryImpl implements CustomerRepository {
   }
 
   @Override
-  public Customer save(Customer customer) {
+  public MongoCustomerEntity save(Customer customer) {
     MongoCustomerEntity customerEntity = new MongoCustomerEntity(customer);
     this.mongoCustomerRepository.save(customerEntity);
-    return customer;
+    return customerEntity;
   }
 
   @Override

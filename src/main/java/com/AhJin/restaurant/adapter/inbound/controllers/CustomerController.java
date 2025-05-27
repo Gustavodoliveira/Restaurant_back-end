@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.AhJin.restaurant.adapter.outbound.repositories.CustomerRepositoryImpl;
+import com.AhJin.restaurant.application.services.CustomerService;
 import com.AhJin.restaurant.domain.customer.Customer;
 import com.AhJin.restaurant.domain.customer.CustomerRepository;
+import com.AhJin.restaurant.domain.customer.CustomerResponseDto;
 import com.AhJin.restaurant.domain.customer.DtoCustomerRegister;
 
 @RestController
@@ -19,11 +21,13 @@ public class CustomerController {
   @Autowired
   CustomerRepositoryImpl customerRepositoryImpl;
 
+  @Autowired
+  CustomerService customerService;
+
   @PostMapping("/save")
   public ResponseEntity saveEntity(@RequestBody DtoCustomerRegister data) throws Exception {
     try {
-      Customer customer = new Customer(data);
-      Customer resp = customerRepositoryImpl.save(customer);
+      CustomerResponseDto resp = customerService.SaveUser(data);
       return ResponseEntity.ok().body(resp);
     } catch (Exception e) {
       return ResponseEntity.badRequest().body(e.getMessage());// TODO: handle exception
