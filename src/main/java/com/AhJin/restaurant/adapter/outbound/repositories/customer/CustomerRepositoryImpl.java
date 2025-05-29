@@ -1,4 +1,4 @@
-package com.AhJin.restaurant.adapter.outbound.repositories;
+package com.AhJin.restaurant.adapter.outbound.repositories.customer;
 
 import java.util.List;
 import java.util.UUID;

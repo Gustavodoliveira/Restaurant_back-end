@@ -17,4 +17,8 @@ public class Category {
   public void setName(String name) {
     this.name = name;
   }
+
+  public Category(DtoCategoryRegister data) {
+    this.name = data.name();
+  }
 }

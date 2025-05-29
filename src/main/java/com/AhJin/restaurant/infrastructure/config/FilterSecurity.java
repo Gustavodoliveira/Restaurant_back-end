@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.AhJin.restaurant.adapter.outbound.repositories.MongoCustomerRepository;
+import com.AhJin.restaurant.adapter.outbound.repositories.customer.MongoCustomerRepository;
 import com.AhJin.restaurant.application.services.Jwt;
 
 import jakarta.servlet.FilterChain;
